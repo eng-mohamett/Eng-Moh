@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EngMoh — Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER (waxba lagama beddelin) -->
+  <header class="header">
+    <a class="logo" href="#home">EngMoh</a>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav class="nav" id="nav">
+      <a href="#home" class="active">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact" class="btn">Let's Connect</a>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <main id="home" class="hero container">
+    <div class="hero-text">
+      <p class="kicker">Frontend Developer</p>
+
+      <h1 class="hero-h1">
+        <span>Web</span> & <span>Graphic Designer</span>
+      </h1>
+
+      <p class="sub">
+        Waxaan ku takhasusay Frontend Development iyo Graphic Design.<br/>
+        Waxaan dhisaa website-yo casri ah, responsive ah, isla markaana leh design soo jiidasho leh.
+      </p>
+
+      <div class="cta">
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="#contact" class="link">Let’s Connect</a>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <img class="profile-img" src="me.jpg" alt="Profile" />
+      <div class="blob"></div>
+    </div>
+  </main>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section container reveal">
+    <h2>Skills</h2>
+    <ul class="grid skills">
+      <li>HTML5</li>
+      <li>CSS3 / Flexbox / Grid</li>
+      <li>JavaScript (ES6+)</li>
+      <li>Responsive Design</li>
+      <li>UI / UX Basics</li>
+      <li>Figma</li>
+      <li>Canva</li>
+      <li>Git & GitHub</li>
+    </ul>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section container reveal">
+    <h2>Projects</h2>
+
+    <div class="project-tabs">
+      <button class="tab active" data-tab="web">Web Development</button>
+      <button class="tab" data-tab="design">Graphic Design</button>
+    </div>
+
+    <!-- WEB PROJECTS -->
+    <div class="grid cards tab-content active" id="web">
+      <article class="card">
+        <h3>NGO - Yoolbulsho</h3>
+        <p>Responsive NGO website. <br> website hay'aded ay kuso ban dhigeyso <br>wax qabadked ugargaridda shacabka danta yar</p>
+        <a href="https://eng-mohamett.github.io/Yool-Bulsho" class="link">View</a>
+      </article>
+
+      <article class="card">
+        <h3>Referral Hospital Website</h3>
+        <p>website isdiiwan galin ama balan qabsasho.</p>
+        <a href="https://eng-mohamett.github.io/Referral-hospital/" class="link">View</a>
+      </article>
+    </div>
+
+    <!-- GRAPHIC DESIGN -->
+    <div class="grid cards tab-content" id="design">
+      <article class="card">
+        <img src="design1.jpg" alt="Graphic Design">
+        <p>Poster Design</p>
+      </article>
+
+      <article class="card">
+        <img src="design2.jpg" alt="Graphic Design">
+        <p>Social Media Banner</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section container reveal">
+    <h2>Contact</h2>
+
+    <form class="contact" onsubmit="handleSubmit(event)">
+      <div class="row">
+        <label>
+          Full Name
+          <input type="text" required>
+        </label>
+
+        <label>
+          Email
+          <input type="email" required>
+        </label>
+      </div>
+
+      <label>
+        Message
+        <textarea rows="5"></textarea>
+      </label>
+
+      <button class="btn">Send</button>
+      <p id="formStatus"></p>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> EngMoh — Built with Mahir</p>
+      <ul class="social">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="wa.me/+252617086354">WhatsApp</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="1.js"></script>
+</body>
+</html>
