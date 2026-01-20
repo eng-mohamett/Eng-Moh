@@ -1,4 +1,5 @@
 :root{
+  background-color:var(--bg);
   --bg:#0b0f12;
   --panel:#12171c;
   --muted:#b8c1cc;
@@ -139,3 +140,4 @@ input,textarea{
   }
   .row{grid-template-columns:1fr}
 }
+
