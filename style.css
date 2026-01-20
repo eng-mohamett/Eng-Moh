@@ -1,5 +1,10 @@
 :root{
-  background-color:var(--bg);
+    margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #0b0f0e;
+  overflow-x: hidden;
   --bg:#0b0f12;
   --panel:#12171c;
   --muted:#b8c1cc;
@@ -11,7 +16,7 @@
 
 *{box-sizing:border-box}
 body{
-  margin:0;
+  margin: 0;
   font-family:Inter,sans-serif;
   background:linear-gradient(180deg,var(--bg),#0f1419);
   color:var(--text);
@@ -25,7 +30,8 @@ a{text-decoration:none;color:inherit}
   position:sticky;top:0;z-index:50;
   display:flex;justify-content:space-between;align-items:center;
   padding:1rem 4%;
-  background:rgba(11,15,18,.6);
+  background: linear-gradient(180deg, #0b0f0e, #020403);
+ /* background:rgba(11,15,18,.6);*/
   backdrop-filter:blur(10px);
   border-bottom:1px solid #1f2937
 }
@@ -140,4 +146,5 @@ input,textarea{
   }
   .row{grid-template-columns:1fr}
 }
+
 
