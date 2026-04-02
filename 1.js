@@ -21,43 +21,20 @@ document.querySelectorAll(".nav a").forEach(link=>{
 }); 
 
 
-// Soo aqrinta mashaariicda database-ka
-const webGrid = document.getElementById("web");
-const designGrid = document.getElementById("design");
 
-function loadProjects() {
-  database.ref('projects/').on('value', (snapshot) => {
-    const data = snapshot.val();
-    
-    // Clear current grids
-    webGrid.innerHTML = "";
-    designGrid.innerHTML = "";
+// PROJECT TABS
+const tabs = document.querySelectorAll(".tab");
+const contents = document.querySelectorAll(".tab-content");
 
-    if (data.web) {
-      Object.values(data.web).forEach(proj => {
-        webGrid.innerHTML += `
-          <article class="card">
-            <h3>${proj.title}</h3>
-            <p>${proj.desc}</p>
-            <a href="${proj.link}" class="link" target="_blank">View</a>
-          </article>`;
-      });
-    }
+tabs.forEach(tab=>{
+  tab.addEventListener("click",()=>{
+    tabs.forEach(t=>t.classList.remove("active"));
+    contents.forEach(c=>c.classList.remove("active"));
 
-    if (data.design) {
-      Object.values(data.design).forEach(proj => {
-        designGrid.innerHTML += `
-          <article class="card">
-            <img src="${proj.link}" alt="${proj.title}">
-            <p>${proj.title}</p>
-          </article>`;
-      });
-    }
+    tab.classList.add("active");
+    document.getElementById(tab.dataset.tab).classList.add("active");
   });
-}
-
-// Call function
-loadProjects();
+});
 
 
 // FORM
