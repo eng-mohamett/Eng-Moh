@@ -1,3 +1,5 @@
+
+
 // MOBILE MENU
 const burger = document.getElementById("burger");
 const nav = document.getElementById("nav");
@@ -16,21 +18,47 @@ document.querySelectorAll(".nav a").forEach(link=>{
       burger.setAttribute("aria-expanded","false");
     }
   });
-});
+}); 
 
-// PROJECT TABS
-const tabs = document.querySelectorAll(".tab");
-const contents = document.querySelectorAll(".tab-content");
 
-tabs.forEach(tab=>{
-  tab.addEventListener("click",()=>{
-    tabs.forEach(t=>t.classList.remove("active"));
-    contents.forEach(c=>c.classList.remove("active"));
+// Soo aqrinta mashaariicda database-ka
+const webGrid = document.getElementById("web");
+const designGrid = document.getElementById("design");
 
-    tab.classList.add("active");
-    document.getElementById(tab.dataset.tab).classList.add("active");
+function loadProjects() {
+  database.ref('projects/').on('value', (snapshot) => {
+    const data = snapshot.val();
+    
+    // Clear current grids
+    webGrid.innerHTML = "";
+    designGrid.innerHTML = "";
+
+    if (data.web) {
+      Object.values(data.web).forEach(proj => {
+        webGrid.innerHTML += `
+          <article class="card">
+            <h3>${proj.title}</h3>
+            <p>${proj.desc}</p>
+            <a href="${proj.link}" class="link" target="_blank">View</a>
+          </article>`;
+      });
+    }
+
+    if (data.design) {
+      Object.values(data.design).forEach(proj => {
+        designGrid.innerHTML += `
+          <article class="card">
+            <img src="${proj.link}" alt="${proj.title}">
+            <p>${proj.title}</p>
+          </article>`;
+      });
+    }
   });
-});
+}
+
+// Call function
+loadProjects();
+
 
 // FORM
 function handleSubmit(e){
